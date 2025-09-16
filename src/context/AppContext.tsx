@@ -1,9 +1,54 @@
-import React from 'react'
+import React, { createContext, useContext, useEffect, useState } from 'react'
+import { IUsuario } from '../types';
+import { criarUsuario, obterUsuario } from '../api';
 
-const AppProvider = () => {
+interface AppContextType {
+  usuario: IUsuario | null;
+  criaUsuario: (usuario: Omit<IUsuario,"id">) => Promise<void>;
+}
+
+const AppContext = createContext<AppContextType | undefined>(undefined);
+
+const AppProvider = ({children}:{children:React.ReactNode}) => {
+  const [usuario,setUsuario] = useState<IUsuario | null>(null);
+
+  const carregaDadosUsuario = async() => {
+    try {
+      const usuarios = await obterUsuario();
+      if(usuarios.length > 0){
+        setUsuario(usuarios[0]);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  useEffect(() => {
+    carregaDadosUsuario();
+  },[])
+
+  const criaUsuario = async (usuario: Omit<IUsuario,"id">) => {
+    try {
+      const novoUsuario = await criarUsuario(usuario);
+      setUsuario(novoUsuario)
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   return (
-    <div>AppContext</div>
+    <AppContext.Provider value={{usuario,criaUsuario}}>
+      {children}
+      </AppContext.Provider>
   )
 }
 
 export default AppProvider
+
+export const useAppContext = () => {
+  const context = useContext(AppContext);
+  if(!context){
+    throw new Error("useAppContext deve ser usado dentro de um Provider")
+  }
+  return context;
+}
