@@ -1,0 +1,15 @@
+{
+  "usuarios": [
+    {
+      "id": "63d7",
+      "nome": "Gabriel Andrade",
+      "renda": "50000"
+    },
+    {
+      "id": "1c7f",
+      "nome": "Neilton Alves",
+      "renda": "4000"
+    }
+  ],
+  "transacoes": []
+}
