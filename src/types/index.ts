@@ -1,12 +1,14 @@
 
 export interface IUsuario {
-    id: number;
+    id: string;
     nome: string;
     renda: number;
+    orcamentoDiario: number;
 }
 
 export interface ITransacoes {
-    id: number;
+    id: string;
+    userId:string;
     nome: string;
     valor: number;
     tipo: "receita" | "despesa";

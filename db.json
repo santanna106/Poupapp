@@ -1,19 +1,10 @@
 {
   "usuarios": [
     {
-      "id": "63d7",
+      "id": "3ec7",
       "nome": "Gabriel Andrade",
-      "renda": "50000"
-    },
-    {
-      "id": "1c7f",
-      "nome": "Neilton Alves",
-      "renda": "4000"
-    },
-    {
-      "id": "4a18",
-      "nome": "Gabriel Andra",
-      "renda": "50000"
+      "renda": "50000",
+      "orcamentoDiario": 1666.6666666666667
     }
   ],
   "transacoes": []

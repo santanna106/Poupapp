@@ -1,21 +1,20 @@
 import { useState } from "react";
-import {
-  Section,
-  Container,
-  Title,
-  Description,
-  Illustration,
-  SectionWrapper,
-} from "./style.js";
-import ilustracao from "../../assets/images/ilustracao-cadastro.png";
 import { Form, useNavigate } from "react-router";
+import ilustracao from "../../assets/images/ilustracao-cadastro.png";
 import Botao from "../../componentes/Botao/index.js";
 import CampoTexto from "../../componentes/CampoTexto/index.js";
 import Fieldset from "../../componentes/Fieldset/index.js";
 import Label from "../../componentes/Label/index.js";
-import { IUsuario } from "../../types/index.js";
-import { criarUsuario } from "../../api/index.js";
 import { useAppContext } from "../../context/AppContext.js";
+import { IUsuario } from "../../types/index.js";
+import {
+  Container,
+  Description,
+  Illustration,
+  Section,
+  SectionWrapper,
+  Title,
+} from "./style.js";
 
 const Cadastro = () => {
 
