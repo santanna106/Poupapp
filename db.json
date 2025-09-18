@@ -1,11 +1,30 @@
 {
   "usuarios": [
     {
-      "id": "3ec7",
+      "id": "555d",
       "nome": "Gabriel Andrade",
       "renda": "50000",
-      "orcamentoDiario": 1666.6666666666667
+      "orcamentoDiario": "500001666.66666666666671000"
     }
   ],
-  "transacoes": []
+  "transacoes": [
+    {
+      "id": "f765",
+      "nome": "Servico de BI",
+      "valor": 5000,
+      "tipo": "receita",
+      "categoria": "projeto",
+      "data": "2025-09-16",
+      "userId": "555d"
+    },
+    {
+      "id": "4413",
+      "nome": "Despesa",
+      "valor": 4000,
+      "tipo": "despesa",
+      "categoria": "Alimentação",
+      "data": "2025-09-18",
+      "userId": "555d"
+    }
+  ]
 }

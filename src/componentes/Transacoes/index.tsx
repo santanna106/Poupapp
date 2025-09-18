@@ -45,7 +45,7 @@ const Transacoes = () => {
   const modalRef = useRef<ModalHandle>(null);
   const { transacoes, criaTransacao } = useAppContext();
 
-  const [novaTransacao, setNovaTransacao] = useState<Omit<ITransacoes, "id">>({
+  const [novaTransacao, setNovaTransacao] = useState<Omit<ITransacoes, "id" | "userId">>({
     nome: "",
     valor: 0,
     tipo: "receita",
@@ -123,7 +123,7 @@ const Transacoes = () => {
                 placeholder="10"
                 value={novaTransacao.valor}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                  aoMudar("valor", e.target.value)
+                  aoMudar("valor", parseFloat(e.target.value))
                 }
               />
             </Fieldset>
